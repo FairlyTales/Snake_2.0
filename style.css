@@ -1,0 +1,28 @@
+html {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.wrapper {
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fields {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+
+  overflow: hidden;
+}
+
+.fields > div {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+
+  float: left;
+
+  box-sizing: border-box;
+}
