@@ -26,3 +26,11 @@ html {
 
   box-sizing: border-box;
 }
+
+[data-game="fruit"] {
+  background-color: red;
+}
+
+[data-game="snake"] {
+  background-color: green;
+}
