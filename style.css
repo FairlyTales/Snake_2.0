@@ -32,5 +32,13 @@ html {
 }
 
 [data-game="snake"] {
+  background-color: greenyellow;
+}
+
+[data-game="snake--head"] {
   background-color: green;
+}
+
+[data-game="wall"] {
+  background-color: blue;
 }
