@@ -4,21 +4,27 @@ import Snake from './snake.js';
 import Utility from './random.js'
 
 window.onload = function (e) {
-  let field = document.querySelector('.fields');
+  const field = document.querySelector('.fields');
+  const scoreField = document.getElementById('score');
+  const restartBtn = document.getElementById('restart');
+  const gameOver = document.querySelector('.game-over-container');
+  const btnContainer = document.querySelector('.btn-container');
+  
+  
 
   // set board dimensions and cell size
-  let boardDimensions = {
-    x: 20,
-    y: 10,
+  const boardDimensions = {
+    x: 17,
+    y: 17,
     cellSize: 40
   }
 
   // snake starting position
-  const snakeStartPosition = [[10, 5], [9, 5]];
+  const snakeStartPosition = [[8, 9], [7, 9]];
 
   // create gameboard(matrix) and snake objects
-  let matrix = new Matrix(field, boardDimensions);
-  let snake = new Snake(matrix, snakeStartPosition, 'right');
+  const matrix = new Matrix(field, boardDimensions);
+  const snake = new Snake(matrix, snakeStartPosition, 'right');
 
   // create gameboard and snake on the page
   matrix.create();
@@ -32,23 +38,25 @@ window.onload = function (e) {
   let score = 0;
 
   // game loop
-  let gameLoop = setInterval(() => {
+  const gameLoop = setInterval(() => {
     if(!snake.snekDead) {
       if(snake.ateFruit) {
         score++;
         snake.ateFruit = false;
 
-        //todo: add walls to .fruit()
         (new Fruit(matrix, Utility.generateFruit(matrix, snake))).show();
       }
 
+      scoreField.textContent = score;
       snake.move();
     } else {
-      console.log('snek is dead');
-      console.log(`your score is: ${score}`);
       clearInterval(gameLoop);
-      //todo: add overlay and score screen with restart button
+      gameOver.classList.remove('hidden');
+      btnContainer.classList.remove('hidden');
     }
   }, 500);
 
+  restartBtn.addEventListener('click', (e) => {
+    location.reload();
+  })
 }

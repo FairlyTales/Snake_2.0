@@ -9,9 +9,4 @@ export default class Utility {
 
     return [position];
   }
-
-  //todo: finish the wall and add it to the main.js
-  static generateWall(matrix) {
-
-  }
 }
