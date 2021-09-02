@@ -5,9 +5,10 @@ import Utility from './random.js';
 
 window.onload = function (e) {
   const field = document.querySelector('.fields');
-  const scoreField = document.getElementById('score');
+  const scoreField = document.querySelector('.score');
   const restartBtn = document.getElementById('restart');
   const gameOver = document.querySelector('.game-over-container');
+  const gameOverContent = document.querySelector('.game-over-content')
 
   // set board dimensions and cell size
   const boardDimensions = {
@@ -51,9 +52,10 @@ window.onload = function (e) {
       snake.move();
     } else {
       clearInterval(gameLoop);
-      gameOver.classList.remove('hidden');
+      gameOver.classList.remove('hidden-container');
+      gameOverContent.classList.remove('hidden-content');
     }
-  }, 500);
+  }, 400);
 
   restartBtn.addEventListener('click', e => {
     location.reload();

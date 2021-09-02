@@ -4,12 +4,16 @@ html {
 }
 
 body {
-  background-color: seagreen;
+  margin: 0;
+  padding: 0;
+  background-color: #267f4d;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .wrapper {
   position: relative;
-  height: 95vh;
+  height: 100vh;
+  width: 100vw;
 
   display: flex;
   flex-direction: column;
@@ -35,50 +39,76 @@ body {
   box-sizing: border-box;
 }
 
-.score-container,
 .game-over-container {
-  margin-top: 5px;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  transition: opacity 0.5s;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #09450b;
+  opacity: 0.85;
+}
+
+.score-container {
+  margin-top: 10px;
   color: white;
   font-size: 40px;
 }
 
-.game-over-container {
+.game-over-content {
   position: absolute;
-  top: 1110px;
+  left: 42%;
+  top: 42%;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-over-content span {
+  color: white;
+  font-size: 40px;
+  line-height: 40px;
 }
 
 .btn-container {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 13px;
 }
 
 .btn-container > button {
   padding: 10px;
   font-size: 30px;
-  background-color: darkgreen;
+  background-color: rgba(13, 145, 19, 1);
   color: white;
   border-radius: 10px;
   border-style: none;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .btn-container > button:hover {
-  opacity: 0.7;
+  background-color: rgba(13, 145, 19, 0.6);
 }
 
 .btn-container > button:active {
-  opacity: 0.4;
+  background-color: rgba(13, 145, 19, 0.4);
 }
 
-.hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
+.hidden-container {
+  opacity: 0;
+}
+
+.hidden-content {
+  display: none;
 }
 
 [data-game='fruit'] {
