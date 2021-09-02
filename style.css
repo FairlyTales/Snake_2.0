@@ -8,6 +8,7 @@ body {
 }
 
 .wrapper {
+  position: relative;
   height: 95vh;
 
   display: flex;
@@ -41,11 +42,14 @@ body {
   font-size: 40px;
 }
 
-.game-over {
-  margin-top: 10px;
+.game-over-container {
+  position: absolute;
+  top: 1110px;
 }
 
 .btn-container {
+  display: flex;
+  justify-content: center;
   margin-top: 10px;
 }
 
