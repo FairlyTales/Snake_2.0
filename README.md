@@ -1,4 +1,4 @@
-# Snake-OOP
+# Snake 2.0
 
 Second version of the snake, now in OOP.
 
