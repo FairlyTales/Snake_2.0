@@ -1,6 +1,6 @@
 # Snake-OOP
 
-One more snake, now in OOP.
+Second version of the snake, now in OOP.
 
 <a href="https://fairlytales.github.io/Snake-OOP">Live version</a>
  
